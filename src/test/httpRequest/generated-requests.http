@@ -1,0 +1,61 @@
+### 자산리스트 조회
+GET http://localhost:8080/api/v1/assets/list
+Authorization: Bearer eyJyZWdEYXRlIjoxNjQ3MzI4MDY2OTk5LCJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwiZW1haWwiOiJ0ZXN0MUB0ZXN0LmNvbSIsImV4cCI6MTY0NzMyOTg2Nn0.WKLuTN78DjJ_V6dOxkSmPbnxwTD7fsNnsp-A1dS6dXOR356CvwmMq_f0BtrO2xr2cy5YQ819E6IziWjUxZTqZw
+
+### 자산 등록
+POST http://localhost:8080/api/v1/assets/add
+Content-Type: application/json
+Authorization: Bearer eyJyZWdEYXRlIjoxNjQ3MzI4MDY2OTk5LCJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwiZW1haWwiOiJ0ZXN0MUB0ZXN0LmNvbSIsImV4cCI6MTY0NzMyOTg2Nn0.WKLuTN78DjJ_V6dOxkSmPbnxwTD7fsNnsp-A1dS6dXOR356CvwmMq_f0BtrO2xr2cy5YQ819E6IziWjUxZTqZw
+
+< ./assets-add.json
+
+### 자산 수정
+PUT http://localhost:8080/api/v1/assets/update
+Content-Type: application/json
+Authorization: Bearer eyJyZWdEYXRlIjoxNjQ3MzI4MDY2OTk5LCJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwiZW1haWwiOiJ0ZXN0MUB0ZXN0LmNvbSIsImV4cCI6MTY0NzMyOTg2Nn0.WKLuTN78DjJ_V6dOxkSmPbnxwTD7fsNnsp-A1dS6dXOR356CvwmMq_f0BtrO2xr2cy5YQ819E6IziWjUxZTqZw
+
+< ./assets-upd.json
+
+### 자산 삭제
+DELETE http://localhost:8080/api/v1/assets/delete
+Content-Type: application/json
+Authorization: Bearer eyJyZWdEYXRlIjoxNjQ4NTI5ODE5Njc2LCJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwiZW1haWwiOiJ0ZXN0MUB0ZXN0LmNvbSIsImV4cCI6MTY0ODUzMTYxOX0.l7Hv7gZ3aQVLUPJYVqDryspLJRZurCuCh0Dy3wPcXwA8PF0fLPvCqkgahDeVvLuKeET236_ab_pXgttMcodr-g
+
+< ./assets-del.json
+
+### 자산거래 내역 조회
+GET http://localhost:8080/api/v1/assets/tx/list?assetsType=COIN&pageNo=1
+Authorization: Bearer eyJyZWdEYXRlIjoxNjQ4NTQzNDExMTQ3LCJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwiZW1haWwiOiJ0ZXN0MUB0ZXN0LmNvbSIsImV4cCI6MTY0ODU0NTIxMX0.CEG7ApcOyk-vJU8CoeuqBx9wu-oCOELkf-E6IHteomt7dUVgYao15FO9E60v2JL32eS_-HRYnXwtFV8G-Z0F9g
+
+### 자산 거래 내역 추가
+POST http://localhost:8080/api/v1/assets/tx/add
+Content-Type: application/json
+Authorization: Bearer eyJyZWdEYXRlIjoxNjQ4NTQwNTUzMTEzLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwiZW1haWwiOiJ0ZXN0MUB0ZXN0LmNvbSIsImV4cCI6MTY0ODU0MjM1M30.MvKSS-8TAQ25_UeatpdvXOmP9lv3dGgtMFMxR4QvhYGUA1Vit_SIeMjNMspMwZg5BuXg-bHjP1PCsppnTBtJKg
+
+< ./assets-tx-add.json
+
+### 자산 거래 내역 수정
+PUT http://localhost:8080/api/v1/assets/tx/update
+Content-Type: application/json
+Authorization: Bearer eyJyZWdEYXRlIjoxNjQ4NTQwNTUzMTEzLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwiZW1haWwiOiJ0ZXN0MUB0ZXN0LmNvbSIsImV4cCI6MTY0ODU0MjM1M30.MvKSS-8TAQ25_UeatpdvXOmP9lv3dGgtMFMxR4QvhYGUA1Vit_SIeMjNMspMwZg5BuXg-bHjP1PCsppnTBtJKg
+
+< ./assets-tx-upd.json
+
+### 자산 거래 내역 삭제
+DELETE http://localhost:8080/api/v1/assets/tx/delete
+Content-Type: application/json
+Authorization: Bearer eyJyZWdEYXRlIjoxNjQ4NTQwNTUzMTEzLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwiZW1haWwiOiJ0ZXN0MUB0ZXN0LmNvbSIsImV4cCI6MTY0ODU0MjM1M30.MvKSS-8TAQ25_UeatpdvXOmP9lv3dGgtMFMxR4QvhYGUA1Vit_SIeMjNMspMwZg5BuXg-bHjP1PCsppnTBtJKg
+
+< ./assets-tx-del.json
+
+### 로그인
+POST http://localhost:8080/api/v1/auth/signin
+Content-Type: application/json
+
+< ./auth-signin.json
+
+### 가입
+POST http://localhost:8080/api/v1/auth/signup
+Content-Type: application/json
+
+< ./auth-signup.json

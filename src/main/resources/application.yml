@@ -1,0 +1,42 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+  jpa:
+    show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+      use-new-id-generator-mappings: false
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+
+  sql:
+    init:
+      platform: local
+#  jackson:
+#    property-naming-strategy: SNAKE_CASE
+
+jwt:
+  base64-secret: PUTnbuusPbeIvBlZnsC2j7KnVVlibdM8kkzQD2t3+Cg17+el5natIDfURcvhoXf4pK4Ei3dmrUIfKu/ZeVDpzrHwmvncwQwLh5Hwxy1qysgOXFZC7S9ix5qrXMHQ0t4f1qUmDwiih2LtKNlu6AfZVTVpcPdkwyt0L0kifMX1rE/Ho0Sfll1MYrr28kM6mezyHuSQLu2z8tfDbZovVYoTII0KjGU9OOPde2kwhQ==j
+  expirationDateInMs: 0
+  refreshExpirationDateInMs: 9000000
+
+logging:
+  config: classpath:logback.xml
+  level:
+    com.project.sample.api.demo: debug
+    org.hibernate.type.descriptor.sql: debug

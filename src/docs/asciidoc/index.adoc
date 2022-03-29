@@ -1,0 +1,133 @@
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 3
+:sectlinks:
+
+= DEMO API
+
+== 0.공통
+
+=== URL 정보
+[cols=3*,options=header]
+|===
+|환경|KEY|VALUE
+|DEV|protocol|https
+|DEV|host_name|localhost:8080
+|DEV|port|443
+|||
+|PRD|protocol|https
+|PRD|host_name|localhost:8080
+|PRD|port|443
+|===
+
+=== 클라이언트 인증 방식
+----
+클라이언트 인증방식: HTTP Basic Authentication
+AccessToken API
+ID: test@test.com, PW: 1234
+응답 : {토큰문자열}
+
+Example)
+Authorization: Bearer {토큰문자열}
+----
+=== 응답코드 정의
+[cols=3*,options=header]
+|===
+|상태코드|설명|비고
+|0000|성공|
+|1001|요청 파라미터 Validation 오류|
+|2004|인증토큰 인증 오류|
+|2009|사용자 정보 없음|
+|8001|헤더인증실패|
+|9000|헤더인증실패|
+|9001|접근거부|
+|9999|기타서버오류|
+|===
+
+=== 에러응답 결과
+[cols=3*,options=header]
+|===
+|파라미터명|타입|설명
+|code|string|응답코드
+|message|string|응답메시지
+|===
+
+== 1. 회원가입
+
+=== 개요
+사용자 회원가입 요청을 처리한다.
+
+=== Request
+CURL:
+include::{snippets}/signup/curl-request.adoc[]
+
+include::{snippets}/signup/request-fields.adoc[]
+
+Request HTTP Example:
+include::{snippets}/signup/http-request.adoc[]
+
+=== Response
+include::{snippets}/signup/response-fields.adoc[]
+
+Response:
+include::{snippets}/signup/http-response.adoc[]
+
+== 2. 회원 로그인
+
+=== 개요
+회원 로그인 요청을 처리한다.
+
+=== Request
+CURL:
+include::{snippets}/signin/curl-request.adoc[]
+
+include::{snippets}/signin/request-fields.adoc[]
+
+Request HTTP Example:
+include::{snippets}/signin/http-request.adoc[]
+
+=== Response
+include::{snippets}/signin/response-fields.adoc[]
+
+Response:
+include::{snippets}/signin/http-response.adoc[]
+
+== 3. 자산등록
+
+=== 개요
+회원의 자산정보를 등록한다.
+
+=== Request
+CURL:
+include::{snippets}/addAssets/curl-request.adoc[]
+
+include::{snippets}/addAssets/request-fields.adoc[]
+
+Request HTTP Example:
+include::{snippets}/addAssets/http-request.adoc[]
+
+=== Response
+include::{snippets}/addAssets/response-fields.adoc[]
+
+Response:
+include::{snippets}/addAssets/http-response.adoc[]
+
+== 4. 자산리스트 조회
+
+=== 개요
+회원의 자산 리스트를 조회한다.
+
+=== Request
+CURL:
+include::{snippets}/getAssetsList/curl-request.adoc[]
+
+Request HTTP Example:
+include::{snippets}/getAssetsList/http-request.adoc[]
+
+=== Response
+include::{snippets}/getAssetsList/response-fields.adoc[]
+
+Response:
+include::{snippets}/getAssetsList/http-response.adoc[]
